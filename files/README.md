@@ -18,7 +18,7 @@ Whisper is perfect for:
 - **Brainstorming**: Generate ideas faster by quickly summarizing and comparing multiple videos.
 
 ## Workflow
-![Workflow Diagram]("./workflow.png")
+![Workflow Diagram](workflow.png)
 The Whisper workflow comprises the following steps:
 
 1. **YouTube URL**: Input your desired YouTube video URL.
