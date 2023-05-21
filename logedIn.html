@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Whisper</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <!--Import Quicksand Oswald and Courgette font from Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Oswald&family=Courgette&display=swap" rel="stylesheet">
+  </head>
+
+  <body class="dark-mode">
+    <div id="function_bar">
+      <!-- Set container for logo and text -->
+      <div id="logo_container">
+        <a href="./index.html">
+          <img id="logo_image" src="./image/robot_logo.svg" alt="logo">
+        </a>
+        <p>
+          Whisper
+        </p>
+      </div>
+    <!-- Create a container to store menus on the right side of navigation bar -->
+    <div id="right_bar">
+      <div id="sign_in" class="dropdown"> <!-- This is the dropdown menu -->
+        <img src="./image/user_white.png" alt="USER" class="dropdown dropdown-toggle" id="user_avatar" width=30>
+        <div class="dropdown-content">
+          <a href="upload.html">Upload</a>
+          <a href="history.html">History</a>
+          <a href="result.html">Result</a>
+          <a href="index.html">Log out</a>
+        </div>
+      </div>
+      
+        <div id="price">
+          <a href="price.html" class="nav_text" id="price_text">Price</a>
+        </div>
+      
+        <div id="doc">
+          <a href="https://platform.openai.com/docs/guides/speech-to-text" class="nav_text" id="doc_text">Doc</a>
+        </div>
+      
+        <div id="upload">
+          <a href="./upload.html" class="nav_text" id="upload_text">Upload</a>
+        </div>
+      
+        <div id="toggle-button">
+          <button onclick="toggleMode()">
+            <img id="toggle_image" src="./image/moonlight.svg" alt="light mode">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Start the elements of the main body here -->
+    <div id="Intro">
+      Vedio too long? <br>
+      Let AI
+      <span class="purple">Whisper </span>
+      to you! <br><br>
+      <span class="pink">Learn 100x faster</span>
+    </div>
+
+    <!-- Set container for animation with three moving strips -->
+    <div id="animation">
+        <div class="strip1"></div>
+        <div class="strip2"></div>
+        <div class="strip3"></div>
+    </div>
+
+    <!-- Set paragraph cnotainer for three usages -->
+    <div id="paragraphs">
+      <div id="education_container">
+        <img id="education_image" src="./image/education_white.png" alt="education">
+        <p id="p1">
+          For Education: <br><br>
+          Miss points in lecture?<br>
+          No time to review the whole video? <br><br>
+        </p>
+      </div>
+
+      <div id="work_container">
+        <img id="work_image" src="./image/work_white.png" alt="work">
+        <p id="p2">
+          For Work: <br><br>
+          Difficult work?<br>
+          Have to learn skills in short time?
+        </p>
+      </div>
+
+      <div id="create_container">
+        <img id="create_image" src="./image/idea_white.png" alt="create">
+        <p id="p3">
+          For Inspiration: <br><br>
+          No innovative ideas? <br>
+          Plan to brainstorm with video?
+        </p>
+      </div>
+    </div>
+
+    <div id="conclusion">
+        Provide URL/file <br>
+        Let <span class="purple">Whisper</span> watch for you with
+        <span class="pink">100x </span>faster <br>
+        Ask him anything
+    </div>
+
+    <!-- Create a demo cntainer for illustration process of transcription -->
+    <div id="demo">
+        <div class="audio">
+            <p id="input">
+              <strong>Input:</strong>
+            </p>
+
+            <audio controls id="play">
+                <source src="horse.ogg" type="audio/ogg">
+                <source src="horse.mp3" type="audio/mpeg">
+                Bruh, change to chrome.
+            </audio>
+            <span class="space"></span>
+            <button id="transcript_button" onclick="transcript()">Transcript</button>
+        </div>
+
+        <div class="transcription">
+                <p id="output">
+                <Strong>Output:</Strong>
+                </p>
+        
+                <div id="paragraph">
+                <p>
+                    <br><br>
+                    To find out what I could about GPT-5, I have read every academic paper I could find about it, every leak report, interview snippet and media article. I can summarize it like this. It will come down to data. How much of it there is, how it's used and where it comes from. These are the factors that will dictate whether GPT-5 gets released later this year and whether it will actually approach genius level IQ. Now just quickly, before everyone bombards me with comments about GPT-4 not being out yet, let me read to you what Sam Altman said about the naming system they use. About Bing AI, he was asked, is it GPT-4 or is that not being disclosed? He said, I think the model numbers thing is a dumb framework anyway. There's been many versions of GPT-3, so it's a better model. And then admits, we need to figure out our naming at some point...
+                </p>
+                </div>
+        </div>
+    </div>
+    
+    <div class="bottom_line">
+      <hr>
+    </div>
+
+    <!-- Set up footer here -->
+    <div class="footer">
+        <p id="twitter">
+          <a id="twitter_text" href="https://twitter.com/Jason20000220">Twitter</a>
+        </p>
+        <p id="discord">
+          <a id="discord_text" href="https://discord.gg/4ufEaSPm">Discord</a>
+        </p>
+        <p id="github">
+          <a id="github_text" href="https://github.com/jasonthewhale/Whisper">Github</a>
+        </p>
+        <p id="email">
+          <a id="email_text" href="mailto:junchen.you@uq.net.au">Email</a>
+        </p>
+    </div>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/jquery-3.5.1.js"></script> <!-- Import jquery -->
+    <script src="./js/initializeDropdown.js"></script> <!-- Import dropdown initializer -->
+  </body>
+</html>

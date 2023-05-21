@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Add URL/files</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <!--Import Quicksand Oswald and Courgette font from Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Oswald&family=Courgette&display=swap" rel="stylesheet">
+  </head>
+  <body class="dark-mode">
+    <div id="function_bar">
+      <!-- Set container for logo and text -->
+      <div id="logo_container">
+        <a href="./logedIn.html">
+          <img id="logo_image" src="./image/robot_logo.svg" alt="logo">
+        </a>
+        <p>Whisper</p>
+      </div>
+      <!-- Create a container to store menus on the right side of navigation bar -->
+      <div id="right_bar">
+        <div id="sign_in" class="dropdown">
+          <img src="./image/user_white.png" alt="USER" class="dropdown dropdown-toggle" id="user_avatar" width=30>
+          <div class="dropdown-content">
+            <a href="upload.html">Upload</a>
+            <a href="history.html">History</a>
+            <a href="result.html">Result</a>
+            <a href="index.html">Log out</a>
+          </div>
+        </div>
+
+        <div id="price">
+          <a href="price.html" class="nav_text" id="price_text">Price</a>
+        </div>
+
+        <div id="doc">
+          <a
+            href="https://platform.openai.com/docs/guides/speech-to-text"
+            class="nav_text"
+            id="doc_text">Doc
+          </a>
+        </div>
+
+        <div id="upload">
+          <a href="./upload.html" class="nav_text" id="upload_upload_text">Upload</a>
+        </div>
+
+        <div id="toggle-button">
+          <button onclick="toggleMode()">
+            <img
+              id="toggle_image"
+              src="./image/moonlight.svg"
+              alt="light mode">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Start the elements of the main body here -->
+    <p id="upload_introduction">Chat with any video/audio</p>
+
+    <!-- Set container for two upload solutions -->
+    <div class="upload_main_container">
+      <div class="url_container">
+        <input type="text" id="youtube_url" placeholder="Provide YouTube URL">
+        <button id="send_button">
+          <img id="send_image" src="./image/send.svg" alt="send">
+        </button>
+      </div>
+
+      <!-- Add a separator div -->
+      <div class="upload_separator">
+        <hr class="upload_line">
+        <span class="upload_separator-text">OR</span>
+        <hr class="upload_line">
+      </div>
+
+      <div class="upload_container">
+        <div class="file_upload">
+          <!-- Set up a file input button and set file format limitation -->
+          <input
+            type="file"
+            id="file_input"
+            accept=".mp3, .mp4, .mpeg, .webm, .mpga, .wav, .m4a">
+          <button id="upload_button">
+            <img
+              id="upload_button_image"
+              src="./image/upload_button.svg"
+              alt="upload_image">
+          </button>
+          <div id="file_info">
+            <p id="file_name"></p>
+            <button id="submit_button">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Set up footer here -->
+    <div class="footer_container">
+      <div class="bottom_line">
+        <hr>
+      </div>
+
+      <div class="upload_footer">
+        <p id="twitter">
+          <a id="twitter_text" href="https://twitter.com/Jason20000220">Twitter</a>
+        </p>
+        <p id="discord">
+          <a id="discord_text" href="https://discord.gg/4ufEaSPm">Discord</a>
+        </p>
+        <p id="github">
+          <a id="github_text" href="https://github.com/jasonthewhale/Whisper">Github</a>
+        </p>
+        <p id="email">
+          <a id="email_text" href="mailto:junchen.you@uq.net.au">Email</a>
+        </p>
+      </div>
+    </div>
+
+    <script src="./js/script.js"></script> <!-- Import main script -->
+    <script src="./js/jquery-3.5.1.js"></script> <!-- Import jQuery -->
+    <script src="./js/initializeDropdown.js"></script> <!-- Import dropdown script -->
+  </body>
+</html>

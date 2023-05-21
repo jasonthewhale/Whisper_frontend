@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sign In / Up</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <!--Import Quicksand Oswald and Courgette font from Google Font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Oswald&family=Courgette&display=swap" rel="stylesheet">
+  </head>
+
+  <body class="dark-mode">
+    <div id="login_description">
+      <p id="login_logo">Whisper</p>
+      <p id="login_text">Log in or create new account.</p>
+      <div class="input_container">
+        <input type="text" id="email-box" placeholder="Email address" required>
+        <button id="login_button" onclick="navigateToUrl('login.html', true)">Continue</button>
+      </div>
+      <div class="login_separator">
+        <!-- Add a separator div -->
+        <hr class="signup_login_line">
+        <span class="signup_login_separator-text">OR</span>
+        <hr class="signup_login_line">
+      </div>
+      <div class="photo_button">
+        <!-- Handle click on two external log in (from Google and Ethereum) -->
+        <!-- When clicking the image button, will redirect to external website.
+             "false" means check input contents is unecessary-->
+        <button onclick="navigateToUrl('https://myaccount.google.com/', false)">
+            <img src="./image/google.svg" alt="Google" id="sign_in_with_google"> <!-- Add the img element with the desired image source -->
+        </button>
+        <span></span>
+        <button onclick="navigateToUrl('https://metamask.io/', false)">
+            <img src="./image/metamask.svg" alt="Metamask" id="sign_in_with_ethereum"> <!-- Add the img element with the desired image source -->
+        </button>
+      </div>
+    </div>
+    <!-- Import main script -->
+    <script src="./js/script.js"></script>
+  </body>
+</html>

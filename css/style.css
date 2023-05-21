@@ -1,0 +1,1370 @@
+/* Define colour variable for website pages */
+:root {
+  --eggplant_dark: #5C475A;
+  --eggplant_light: #6A374F;
+  --violet: #4C3549;
+  --quinacridone_magenta: #e1aabd;
+  --magenta: #DF367C;
+  --imperial_red: #FF3E41;
+  --bright_pink: #FF4D80;
+  --blush: #F1E2E5;
+  --tea_rose: #DEBAC0;
+  --orchid_pink: #E1ACC1;
+  --plum: #D48CC1;
+  --mauve: #C47AC0;
+}
+
+/* Remove default padding and margin */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* Default mode is dark */
+body.dark-mode {
+  background: linear-gradient(
+    -90deg,
+    rgba(36, 23, 42, 1) 0%,
+    rgba(31, 25, 40, 1) 50%,
+    rgba(30, 30, 30, 1) 100%
+  );
+}
+
+/* Set up light mode colour pattern */
+body.light-mode {
+  background-color: var(--blush);
+  color: black;
+}
+
+body.light-mode #function_bar {
+  background-color: var(--tea_rose);
+}
+
+body.light-mode #sign_in_text,
+body.light-mode #price_text,
+body.light-mode #doc_text,
+body.light-mode #upload_text {
+  color: var(--violet);
+}
+
+body.light-mode #paragraph {
+  color: var(--violet); 
+}
+
+body.light-mode 
+.audio, 
+body.light-mode 
+.transcription {
+  border: 1px solid var(--eggplant_dark);
+}
+
+body.light-mode #transcript_button {
+  background-color: var(--eggplant_dark);
+  color: var(--blush);
+}
+
+body.light-mode #Intro,
+body.light-mode #conclusion,
+body.light-mode #paragraphs p,
+body.light-mode div.footer #discord_text,
+body.light-mode div.footer #twitter_text,
+body.light-mode div.footer #github_text,
+body.light-mode div.footer #email_text {
+  color: #333; 
+}
+
+#toggle-button button {
+  float: right;
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  background-color: inherit;
+}
+
+img#toggle_image {
+  width: 30px;
+  height: 30px;
+}
+
+@media (min-width: 769px) {
+  /* Set up navigation bar layuot for PC */
+  #function_bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111729;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+  }
+}
+
+@media (min-width: 769px) {
+  #right_bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #sign_in,
+  #price,
+  #doc,
+  #upload,
+  #toggle-button {
+    margin-right: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Set up navigation bar layuot for mobile */
+  #function_bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #111729;
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  #right_bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  #sign_in,
+  #doc,
+  #price,
+  #upload,
+  #toggle-button {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+#toggle-button {
+  margin-top: 3px;
+}
+
+.nav_text {
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.2s ease-in;
+  font-size: 20px;
+  position: relative;
+}
+
+.nav_text:hover {
+  color: var(--magenta);
+}
+
+.nav_text:hover::before {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: var(--magenta);
+  border-radius: 50%;
+  bottom: -10px;
+  left: calc(50% - 3px);
+}
+
+#logo_container {
+  display: flex;
+  font-size: 20px;
+  padding: 2%;
+  color: #be5efa;
+  align-items: center;
+  font-family: 'Courgette', cursive;
+}
+
+#logo_container button {
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+  padding-right: 5%;
+}
+
+/* Set up drop down menu for loged in account */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  color: black;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown::after {
+  content: " ▼";
+  font-size: 0.6em;
+  vertical-align: middle;
+  color: white;
+}
+
+.dropdown.dropdown-toggle::after {
+  content: none;
+}
+
+#user_avatar {
+  cursor: pointer;
+}
+
+/* Start to set up main body of the web page.*/
+#Intro {
+  color: white;
+  text-align: center;
+  margin-top: 10%;
+  font-size: 32px;
+  font-weight: lighter;
+  font-family: 'Quicksand', sans-serif;
+}
+
+span.purple {
+  color: #be5efa;
+}
+span.pink {
+  color: #f972cb;
+}
+
+/* Initialize animation */
+#animation {
+  margin-top: 5%;
+  width: 100vw;
+  align-items: center;
+  align-content:center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Draw three strip as objects of animation */
+.strip1 {
+  width: 100px;
+  height: 5px;
+  background-color: #be5efa;
+  position: relative;
+  animation: stripMoveRight 3s linear infinite;
+}
+
+.strip2 {
+  width: 100px;
+  height: 5px;
+  background-color: #f972cb;
+  position: relative;
+  animation: stripMoveRight 3s linear infinite reverse;
+}
+.strip3 {
+  width: 100px;
+  height: 5px;
+  background-color: white;
+  position: relative;
+  animation: stripMoveRight 2s linear infinite;
+}
+
+/* Set up keyframes for three strips */
+@keyframes stripMoveRight {
+  from { transform: translateX(0%); }
+  to { transform: translateX(calc(100vw - 100px)); }
+}
+
+@media (min-width: 769px) {
+  #paragraphs {
+    position: relative;
+    color: white;
+    display: flex;
+    margin-top: 10%;
+    justify-content: center;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  #education_container,
+  #work_container,
+  #create_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 33%;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+  }
+}
+
+@media (max-width: 768px) {
+  #paragraphs {
+    position: relative;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #education_container,
+  #work_container,
+  #create_container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+#education_image,
+#work_image,
+#create_image {
+  align-self: center;
+  object-fit: cover;
+  padding-bottom: 10%;
+}
+
+#conclusion {
+  color: white;
+  position: relative;
+  margin-top: 5%;
+  text-align: center;
+  font-size: 24px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* Set up demo container */
+#demo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+}
+
+.audio {
+  display: flex;
+  position: relative;
+  justify-content: left;
+  margin: 0 auto;
+  border: 1px solid white;
+  box-sizing: border-box;
+  width: 60%;
+  text-align: left;
+}
+
+#input {
+  padding-left: 2%;
+  color: #be5efa;
+}
+
+#play {
+  padding-left: 20%;
+}
+
+.space {
+  width: 22%;
+}
+
+#transcript_button {
+  width: 80px;
+  height: 25px;
+  align-self: center;
+  align-content: center;
+  color: var(--violet);
+  background-color: var(--blush);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.transcription {
+  display: flex;
+  position: relative;
+  color: white;
+  border: 1px solid white;
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 60%;
+}
+
+#output {
+  padding-left: 2%;
+  color:#f972cb;
+}
+
+#paragraph p{
+  display: none;
+  font-size: 20px;
+  text-align: justify;
+  letter-spacing: 2px;
+  line-height: 25px;
+  padding-right: 2%;
+  padding-bottom: 2%;
+  font-family: 'Oswald', sans-serif;
+}
+
+div.bottom_line {
+  position: relative;
+  margin-top: 20%;
+}
+
+/* Set up footer layout for both PC and mbile */
+@media (min-width: 769px) {
+  div.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+#discord,
+#twitter,
+#github,
+#email  {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-decoration: none;
+}
+
+#discord_text,
+#twitter_text,
+#github_text,
+#email_text {
+  color: white;
+  text-decoration: none;
+}
+
+#twitter_text:hover,
+#discord_text:hover,
+#github_text:hover,
+#email_text:hover  {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  div.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 0;
+  }
+
+  #discord,
+  #twitter,
+  #github,
+  #email  {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+/* Personalized style settings of signup_login page */
+#login_description {
+  text-align: center;
+  margin-top: 15%;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#login_logo {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #be5efa;
+  font-family: 'Courgette', cursive;
+}
+
+#login_text {
+  font-size: 40px;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+#email-box {
+  display: block;
+  width: 100%;
+  max-width: 422px;
+  height: 30px; /* Increase the height of the input box */
+  padding: 12px; /* Increase the padding for larger input box */
+  font-size: 18px; /* Increase the font size */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#login_button {
+  width: 100%;
+  max-width: 450px; /* Set the same max-width as the input box */
+  height: 50px;
+  padding: 12px;
+  font-size: 18px;
+  background-color: mediumslateblue;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login_separator {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px; /* Add margin-top to create space between the button and separator */
+  margin-bottom: 20px;
+}
+
+.signup_login_line {
+  flex-grow: 1;
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 0 10px;
+}
+
+.signup_login_separator-text {
+  font-size: 18px;
+  color: white;
+  background-color: inherit;
+  padding: 0 10px;
+}
+
+.photo_button {
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  overflow: hidden; /* Hide the image overflow if it exceeds the button size */
+}
+
+#sign_in_with_ethereum, #sign_in_with_google {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+span {
+  width: 20px;
+  height: 20px;
+}
+
+/* Personalized style settings of signup page*/
+#login {
+  text-align: center;
+  margin-top: 16%;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#signup_logo {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #be5efa;
+  font-family: 'Courgette', cursive;
+}
+
+#signup_text {
+  font-size: 30px;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 80px;
+}
+
+#email-box, #password1-box, #password2-box {
+  display: block;
+  width: 100%;
+  max-width: 422px;
+  height: 30px;
+  padding: 12px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#signup_button {
+  width: 100%;
+  max-width: 450px;
+  height: 50px;
+  padding: 12px;
+  font-size: 18px;
+  background-color: mediumslateblue;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Personalized style settings of login page*/
+#login_container {
+  text-align: center;
+  margin-top: 16%;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#login_logo {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #be5efa;
+  font-family: 'Courgette', cursive;
+}
+
+#login_text {
+  font-size: 30px;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 80px;
+}
+
+#email-box, #password-box {
+  display: block;
+  width: 100%;
+  max-width: 422px;
+  height: 30px;    
+  padding: 12px;  
+  font-size: 18px; 
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 20px;
+  margin-left: auto;   
+  margin-right: auto;   
+}
+
+#login_button {
+  width: 100%;
+  max-width: 450px; /* Set the same max-width as the input box */
+  height: 50px;
+  padding: 12px;
+  font-size: 18px;
+  background-color: mediumslateblue;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  margin-top: 40px;
+  margin-left: auto; /* Center the button horizontally */
+  margin-right: auto; /* Center the button horizontally */
+}
+
+
+/* Personalized style settings of upload_page */
+
+#upload_upload_text {
+  color: #be5efa;
+}
+
+body.light-mode #upload_upload_text {
+  /* Change colour of upload button to show current page */
+  color: var(--mauve);
+}
+
+body.light-mode #upload_introduction {
+  color: var(--violet);
+}
+
+body.light-mode .upload_main_container {
+  background-color: var(--plum);
+}
+
+body.light-mode div.upload_footer #discord_text,
+body.light-mode div.upload_footer #twitter_text,
+body.light-mode div.upload_footer #github_text,
+body.light-mode div {
+  color: #333; 
+}
+
+#upload_introduction {
+  font-size: 40px;
+  color: white;
+  text-align: center;
+  margin-top: 8%;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.upload_main_container {
+  max-width: 1200px;
+  width: 80%;
+  height: 400px;
+  background-color: #EBDDF2;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.url_container {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#youtube_url {
+  font-size: 20px;
+  flex-grow: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+#send_button {
+  padding: 8px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+}
+
+#send_image {
+  width: 20px; 
+  height: 20px; 
+}
+
+.upload_separator {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px; 
+  margin-bottom: 20px;
+}
+
+.upload_line {
+  flex-grow: 1;
+  border: none;
+  border-top: 1px solid black;
+  margin: 0 10px;
+}
+
+.upload_separator-text {
+  font-size: 20px;
+  color: black;
+  background-color: inherit;
+  padding: 0 10px;
+}
+
+.upload_container {
+  background-color: white;
+  width: 90%;
+  height: 50%;
+  border-radius: 4px;
+  background-image: url('./image/format_background.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 1000px 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.file_upload {
+  text-align: center;
+  }
+
+#file_input, 
+#file_info, 
+#submit_button {
+  display: none;
+}
+
+#upload_button {
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  margin-right: 70px;
+}
+
+#upload_button_image {
+  width: 200%;
+  height: 200%;
+}
+
+#submit_button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #007BFF;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+@media (min-width: 769px) {
+div.upload_footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer_container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+div.bottom_line {
+  position: relative;
+  margin-top: 8.9%;
+}
+}
+
+#discord,
+#twitter,
+#github,
+#email  {
+margin-top: 20px;
+margin-bottom: 20px;
+text-decoration: none;
+}
+
+#discord_text,
+#twitter_text,
+#github_text,
+#email_text {
+color: white;
+text-decoration: none;
+}
+
+#twitter_text:hover,
+#discord_text:hover,
+#github_text:hover,
+#email_text:hover  {
+text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+div.upload_footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 0;
+}
+
+#discord,
+#twitter,
+#github,
+#email  {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+}
+
+
+/* Personalized style settings of history page*/
+
+body.light-mode #file_text {
+  color: #333; 
+}
+
+.history_intro {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 12%;
+  justify-content: space-between;
+  font-family: 'Quicksand', sans-serif;
+}
+
+#file_text {
+  color: white;
+  font-size: 40px;
+}
+
+#history_upload_button_text {
+  background-color: mediumslateblue;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  font-size: 20px;
+  border: none;
+  border-radius: 4px;
+  display: inline-block;
+  padding: 10px;
+}
+
+#history_line {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+.file_container {
+  max-width: 1200px;
+  width: 80%;
+  height: 40px;
+  background-color: aliceblue;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.inner_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 40px); /* This will subtract 20px from both ends */
+}
+
+.button_container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: 10px;
+}
+
+/* make this button class without underline when mouse hover on it */
+.open_button {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  color: white;
+  border-radius: 4px;
+  height: 30px;
+  width: 50px;
+  cursor: pointer;
+  background-color: #007BFF;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+}
+
+.open_button a {
+  text-decoration: none;
+}
+
+.open_button a:hover {
+  color: green;
+  text-decoration: none;
+}
+
+.setting_button {
+  border-radius: 4px;
+  height: 30px;
+  width: 50px;
+  cursor: pointer;
+  margin-left: 10px;
+  border: none;
+  background-color: inherit;
+  position: relative;
+  z-index: 1;
+}
+
+.history_dropdown {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  max-width: 50px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box; /* Add box-sizing to account for padding */
+  text-align: center;
+}
+
+.option {
+    display: block;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid #ccc;
+    width: 80px;
+    color: blue;
+    border-color: blue;
+    border-radius: 2px;
+}
+
+.option:hover {
+    background-color: #f1f1f1;
+}
+
+.hidden {
+    display: none;
+}
+
+#progress_bar {
+  margin-right: 10px;
+  margin-top: 3px;
+}
+
+/* Personalized style settings of result page*/
+
+body.light-mode #result_summary {
+  color: var(--violet);
+}
+
+body.light-mode #left_content,
+  body.light-mode #right_content {
+    background-color: #FEFAFE;
+}
+
+@media (min-width: 769px) {
+  #result_contents {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8%;
+    position: relative;
+    z-index: 1;
+}
+}
+
+@media (max-width: 768px) {
+  #result_contents {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8%;
+    margin-bottom: 8%;
+  }
+}
+
+#transcript_container {
+    margin-top: 60px;
+    width: 40%;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Quicksand', sans-serif;
+}
+
+#chat_container {
+    margin-top: 60px;
+    width: 40%;
+    color: white;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#left_buttons {
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#summary_button, #result_transcription_button {
+    cursor: pointer;
+}
+
+#left_content {
+    color: white;
+    height: 500px;
+    padding: 2%;
+    border-radius: 4px;
+    font-size: 20px;
+    overflow-y: auto;
+    background-color: rgba(255, 255, 255, 0.31);
+}
+
+#summary_button, #result_transcription_button, #chat_button {
+    border-radius: 4px;
+    border: none;
+    width: 80px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#summary_button {
+    color: white;
+    background-color: #be5efa;
+}
+
+#result_transcription_button {
+    color: white;
+    background-color: rgba(241, 5, 175, 0.72);
+}
+
+#chat_button {
+    margin-bottom: 20px;
+    color: white;
+    background-color: purple;
+}
+
+#chat_button_container {
+    display: flex;
+    justify-content: center;
+}
+
+#right_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 500px;
+    padding: 2%;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.31);
+}
+
+#chat_output {
+    width: 80%;
+    background-color: white;
+    color: black;
+    border-radius: 4px;
+    padding: 1%;
+    align-self: flex-start;
+    border: solid 1px var(--violet);
+}
+
+#chat_input {
+    width: 100%;
+}
+
+#q1, #q2, #q3 {
+    border-radius: 2px;
+    border: solid 1px var(--violet);
+    cursor: pointer;
+    height: 25px;
+}
+
+.message_container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+#send_message {
+    font-size: 20px;
+    flex-grow: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+}
+
+#send_button {
+    padding: 8px;
+    border: none;
+    background-color: gray;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+}
+
+#send_image {
+    width: 20px; 
+    height: 20px; 
+  }
+
+/* Personalized style settings of price page*/
+
+body.light-mode #plan_text,
+body.light-mode #basic_description,
+body.light-mode #limitation_text {
+  color: var(--violet);
+}
+
+body.light-mode #price_price_text {
+  color: var(--mauve);
+}
+
+
+body.light-mode .gold_text {
+  color: blueviolet;
+}
+
+body.light-mode .main_container {
+  background-color: var(--plum);
+}
+
+body.light-mode .basic_plan,
+body.light-mode .pro_plan {
+  background-color: var(--orchid_pink);
+}
+
+#price_price_text {
+  color: #be5efa;
+}
+
+#logo_container {
+  display: flex;
+  font-size: 20px;
+  padding: 2%;
+  color: #be5efa;
+  align-items: center;
+  align-items: center;
+  font-family: 'Courgette', cursive;
+}
+
+#logo_container button {
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+  padding-right: 5%;
+}
+
+.price_intro {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  justify-content: space-between;
+}
+
+#plan_text {
+  color: white;
+  font-size: 40px;
+  margin-top: 10%;
+}
+
+#price_line {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+@media (min-width: 769px) {
+  .plan_container {
+    align-self: center;
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    gap: 200px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+    position: relative;
+  }
+}
+
+#upgrade_button {
+  width: 80px;
+  height: 30px;
+  border: none;
+  background-color: mediumslateblue;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .plan_container {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 2%;
+  }
+}
+
+.basic_plan,
+.pro_plan {
+  padding: 10px;
+  width: 40%;
+  max-width: 300px;
+  border: none;
+  color: white;
+  background-color: rgba(217, 217, 217, 0.45);
+  text-align: left;
+  font-size: 20px;
+}
+
+.pro_plan {
+font-family: 'Quicksand', sans-serif;
+}
+
+.basic_plan ul, .pro_plan ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.basic_plan li, .pro_plan li {
+  margin: 15px 0; /* Add some margin between list items */
+}
+
+.gold_text {
+  color: gold;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with video</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <!-- Use Quicksand Oswald and Courgette from Google fonts.-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Oswald&family=Courgette&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode">
+    <div id="function_bar">
+      <!-- Set container for logo and text -->
+      <div id="logo_container">
+          <a href="./logedIn.html"><img id="logo_image" src="./image/robot_logo.svg" alt="logo"></a>
+        <p>
+          Whisper
+        </p>
+      </div>
+      <!-- Create a container to store menus on the right side of navigation bar -->
+      <div id="right_bar">
+        <div id="sign_in" class="dropdown">
+          <img src="./image/user_white.png" alt="USER" class="dropdown dropdown-toggle" id="user_avatar" width=30>
+          <div class="dropdown-content">
+            <a href="upload.html">Upload</a>
+            <a href="history.html">History</a>
+            <a href="result.html">Result</a>
+            <a href="index.html">Log out</a>
+          </div>
+        </div>
+
+        <div id="price">
+          <a href="price.html" class="nav_text" id="price_text">Price</a>
+        </div>
+      
+        <div id="doc">
+          <a href="https://platform.openai.com/docs/guides/speech-to-text" class="nav_text" id="doc_text">Doc</a>
+        </div>
+      
+        <div id="upload">
+          <a href="./upload.html" class="nav_text" id="upload_text">Upload</a>
+        </div>
+      
+        <div id="toggle-button">
+          <button onclick="toggleMode()">
+            <img id="toggle_image" src="./image/moonlight.svg" alt="light mode">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Start the elements of the main body here -->
+    <div id="result_contents">
+        <div id="transcript_container">
+            <div id="left_buttons">
+                <button id="summary_button">
+                    Summary
+                </button>
+                <button id="result_transcription_button">
+                  Transcription
+                </button>
+            </div>
+            <!-- Create left_content for video info (summary and transcription) -->
+            <div id="left_content">
+                <p id="result_summary">
+                    The main point of the video is to discuss the recent release of Stanford's Alpaca, a language model that behaves qualitatively similarly to ChatGPT and could be as consequential as GPT-4. The video also highlights the cost-efficient training process used by Stanford to create Alpaca, and compares its performance to other language models such as GPT-3 and ChatGPT. Additionally, the video raises questions about the competition and potential war between companies and governments who are spending millions on building language models versus outsiders who are trying to cheaply imitate them.
+                </p>
+            </div>
+        </div>
+
+        <!-- Create chat_container for chat window -->
+        <div id="chat_container">
+            <div id="chat_button_container">
+                <button id="chat_button">
+                    Chat
+                </button>
+            </div>
+
+            <div id="right_content">
+                <div id="chat_output">
+                  <!-- Default chat text -->
+                    <p>
+                        Hi, I am whisper. An AI bot for YouTube video, feel free to ask any question about this video.
+                    </p>
+                </div>
+               <!-- Set up input layout, including recommendation and input box -->
+                <div id="chat_input">
+                    <div id="recommendation_buttons">
+                        <button id="q1">How good Alpaca is?</button>
+                        <button id="q2">What's the war?</button>
+                        <button id="q3">Why this is cheap?</button>
+                    </div>
+                    <div class="message_container">
+                        <input id="send_message" type="text" placeholder="Ask me anything about this video">
+                        <button id="send_button">
+                            <img id="send_image" src="./image/send.svg" alt="send">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Set up footer here -->
+    <div class="footer_container">
+      <div class="bottom_line">
+        <hr>
+      </div>
+
+      <div class="footer">
+          <p id="twitter">
+            <a id="twitter_text" href="https://twitter.com/Jason20000220">Twitter</a>
+          </p>
+          <p id="discord">
+            <a id="discord_text" href="https://discord.gg/4ufEaSPm">Discord</a>
+          </p>
+          <p id="github">
+            <a id="github_text" href="https://github.com/jasonthewhale/Whisper">Github</a>
+          </p>
+          <p id="email">
+            <a id="email_text" href="mailto:junchen.you@uq.net.au">Email</a>
+          </p>
+      </div>
+    </div>
+    
+    <script src="./js/result.js"></script>
+    <script src="./js/script.js"></script>
+    <!-- Import jQuery here to implement drop down menu for logged in account. -->
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script src="./js/initializeDropdown.js"></script>
+
+</body>
+</html>

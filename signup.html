@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Create an account</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <!--Import Quicksand Oswald and Courgette font from Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Oswald&family=Courgette&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode">
+    <div id="login">
+        <p id="signup_logo">Whisper</p>
+        <p id="signup_text">Create new account</p>
+        <div class="input_container">
+          <input type="email" id="email-box" placeholder="Email address" required>
+          <input type="password" id="password1-box" placeholder="Password" required>
+          <input type="password" id="password2-box" placeholder="Repeat password again" required>
+          <!-- signUp handles input formats during signUp.
+                Parameter means the target website that redirect user to if he input needed information.-->
+          <button id="signup_button" onclick="signUp('logedIn.html')">Sign up</button>
+        </div>
+    </div>
+    <!-- Import main script -->
+    <script src="./js/script.js"></script>
+</body>
+</html>

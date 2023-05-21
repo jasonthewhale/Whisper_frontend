@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <!--Import Quicksand Oswald and Courgette font from Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Oswald&family=Courgette&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode">
+    <div id="login_container">
+        <p id="login_logo">Whisper</p>
+        <p id="login_text">Log in</p>
+        <div class="input_container">
+        <!-- Set up input box for email and password -->
+          <input type="text" id="email-box" placeholder="Email address" value="youjunchen000220@gmail.com" readonly>
+          <input type="password" id="password-box" placeholder="Password" required>
+          <button id="login_button" onclick="logIn('logedIn.html')">Log in</button>
+        </div>
+    </div>
+    <!-- Import main script -->
+    <script src="./js/script.js"></script>
+</body>
+</html>
