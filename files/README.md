@@ -31,18 +31,18 @@ The Whisper workflow comprises the following steps:
 8. **Answer Questions**: Pose questions about the video content, and Whisper will answer them based on its comprehensive understanding of the video.
 
 ## Reference
-* Image
-1. From Google Image
+* Image  
+1. From Google Image  
 "../image/google.svg", "../image/metamask.svg"
-2. From ICONS8 ("https://icons8.com")
+2. From ICONS8 ("https://icons8.com")  
 "../image/create_black.png", "../image/education_black.png", "../image/education_white.png", "../image/idea_black.png", "../image/idea_white.png", "../image/robot_black.svg", "../image/robot_logo.svg", "../image/send.svg", "../image/sunlight.svg", "../image/upload_button.svg", "../image/user_black.png", "../image/user_white.png", "../image/work_black.png", "../image/work_white.png"
 
-* Font
-1. From Google Fonts ("https://fonts.googleapis.com")
+* Font  
+1. From Google Fonts ("https://fonts.googleapis.com")  
 Quicksand Oswald and Courgette
 
-* Library
-1. From jQuery ("https://jquery.com/")
+* Library  
+1. From jQuery ("https://jquery.com/")  
 "../js/jquery-3.5.1.js"
 
 ## Contact
